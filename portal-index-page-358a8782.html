@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B体育 · 产品说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f2f4f6;
+            color: #25282c;
+            line-height: 1.7;
+            padding: 2rem 1.5rem;
+            min-height: 100vh;
+        }
+        .page {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        /* hero 区域 — 极简摘要 */
+        .hero {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 3rem 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.02);
+            border: 1px solid #e6eaee;
+            transition: box-shadow 0.25s;
+        }
+        .hero:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+        }
+        .hero h1 {
+            font-size: 2.4rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+            color: #1e2228;
+        }
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #5f6872;
+            max-width: 680px;
+            line-height: 1.8;
+        }
+        .hero .sub a {
+            color: #2b6c9e;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            font-weight: 500;
+        }
+        .hero .sub a:hover {
+            color: #1b4d73;
+        }
+        /* 卡片网格 */
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2rem 1.8rem;
+            border: 1px solid #e2e7ec;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.04);
+        }
+        .card h2 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: #1f2933;
+            border-bottom: 1px solid #edf0f4;
+            padding-bottom: 0.65rem;
+        }
+        .card p, .card ul {
+            font-size: 0.98rem;
+            color: #3c444e;
+        }
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .card li {
+            padding: 0.4rem 0;
+            padding-left: 1.4rem;
+            position: relative;
+        }
+        .card li::before {
+            content: "·";
+            position: absolute;
+            left: 0.2rem;
+            color: #7c8a9a;
+            font-weight: 700;
+        }
+        .tag {
+            display: inline-block;
+            background: #eef2f7;
+            padding: 0.2rem 0.9rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #2f3b47;
+            margin-right: 0.4rem;
+            margin-bottom: 0.4rem;
+            border: 1px solid #dce2e9;
+        }
+        .suggestion-box {
+            background: #fafbfc;
+            border-radius: 18px;
+            padding: 1.8rem 2rem;
+            margin-top: 1.5rem;
+            border: 1px solid #e0e6ec;
+        }
+        .faq-mini {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+        .faq-item {
+            padding: 0.8rem 0;
+            border-bottom: 1px dotted #dde2e8;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-q {
+            font-weight: 500;
+            color: #1f2933;
+            margin-bottom: 0.25rem;
+        }
+        .faq-a {
+            color: #56626f;
+            font-size: 0.95rem;
+        }
+        .note {
+            background: #ffffffdc;
+            backdrop-filter: blur(2px);
+            border-radius: 16px;
+            padding: 1.8rem 2rem;
+            border: 1px solid #dbe1e8;
+            margin-top: 1.5rem;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.02);
+        }
+        .note p {
+            color: #41505e;
+            font-size: 0.96rem;
+        }
+        .footer-meta {
+            text-align: center;
+            color: #8695a4;
+            font-size: 0.85rem;
+            padding: 2.5rem 0 0.5rem;
+            border-top: 1px solid #dce2e9;
+            margin-top: 2.5rem;
+        }
+        @media (max-width: 680px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+            .hero {
+                padding: 2rem 1.2rem;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .card {
+                padding: 1.5rem 1.2rem;
+            }
+            .suggestion-box {
+                padding: 1.2rem 1rem;
+            }
+            .note {
+                padding: 1.2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <!-- hero -->
+    <div class="hero">
+        <h1>B体育 · 一个视角</h1>
+        <div class="sub">
+            围绕体育内容与数字化体验，<a href="https://portal-index-bsports.com">B体育</a> 为关注赛事、运动与生活方式的用户提供简洁的信息索引方式。不是平台宣言，而是一套温和的工具型说明。
+        </div>
+    </div>
+
+    <!-- 卡片：亮点 + 使用建议 -->
+    <div class="grid">
+        <div class="card">
+            <h2>关键特点</h2>
+            <ul>
+                <li>内容组织以体育主题为骨架，分类简洁直观</li>
+                <li>信息呈现偏向轻量、低干扰，减少冗余元素</li>
+                <li>关注不同运动项目间的关联性，而非孤立罗列</li>
+                <li>界面适应日常浏览习惯，不强调即时推送</li>
+                <li>适用于赛前背景了解、赛后数据回顾等场景</li>
+            </ul>
+            <div style="margin-top: 1.2rem;">
+                <span class="tag">足球 · 篮球 · 网球</span>
+                <span class="tag">赛事索引</span>
+                <span class="tag">运动百科</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>使用建议</h2>
+            <p style="margin-bottom: 0.8rem;">若你正在寻找一个结构清晰、氛围平实的体育聚合入口，以下方式可能适合：</p>
+            <ul>
+                <li>按运动项目浏览，快速定位感兴趣的主题模块</li>
+                <li>结合自身观赛节奏，分阶段查阅相关信息</li>
+                <li>利用站内索引作为出发点，延伸至更深入的资料</li>
+                <li>保持适度频率，将其作为辅助工具而非唯一信息来源</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 场景说明 + 提示 -->
+    <div class="suggestion-box">
+        <h2 style="font-weight: 500; margin-bottom: 1rem; color:#1f2933; font-size: 1.25rem;">适用场景与边界</h2>
+        <p style="margin-bottom: 1.2rem; color: #374452;">
+            <strong>日常轻使用</strong> — 赛前快速浏览背景信息，赛后回顾关键条目。<br>
+            <strong>多项目切换</strong> — 如果你同时关注多个运动，这里不需要反复切换不同站点。<br>
+            <strong>内容补充</strong> — 配合官方直播、新闻或数据平台，作为知识层面的补全。
+        </p>
+        <div style="background: #eef3f9; padding: 0.8rem 1rem; border-radius: 12px; border-left: 3px solid #6b7d92;">
+            <p style="margin:0; font-size:0.95rem; color:#2c3b49;">
+                ⚡ 提示：任何信息索引都无法替代一手赛事源。建议将本页作为辅助参考，并结合多方渠道交叉核对。
+            </p>
+        </div>
+    </div>
+
+    <!-- FAQ 摘要 -->
+    <div class="card" style="margin-top: 1.5rem;">
+        <h2>常见问题摘要</h2>
+        <div class="faq-mini">
+            <div class="faq-item">
+                <div class="faq-q">Q：这里提供实时比分吗？</div>
+                <div class="faq-a">不直接提供动态比分，更偏向于赛事背景、项目介绍与索引归纳。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Q：是否需要注册或登录？</div>
+                <div class="faq-a">浏览内容无需身份验证，所有索引页面开放阅读。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-q">Q：如何获取更详细的资料？</div>
+                <div class="faq-a">可通过 <a href="https://portal-index-bsports.com" style="color:#2b6c9e;">B体育</a> 提供的主题分类进一步导航，部分条目附有外部参考链接。</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 可信但克制的说明 -->
+    <div class="note">
+        <p><strong>关于信息可靠性</strong><br>
+        本索引页的数据与内容均来自公开可查的体育知识库与结构化整理，不包含任何未经核实的赛事预测或内部消息。我们建议所有用户保持独立判断，将本页视作一个温和的起点，而非最终结论。</p>
+        <p style="margin-top: 0.8rem;">页面不收集个人数据，不嵌入追踪脚本，仅提供基础的信息组织服务。</p>
+    </div>
+
+    <div class="footer-meta">
+        <span>产品说明 · 主题索引 · 内容中立</span>
+    </div>
+</div>
+</body>
+</html>
